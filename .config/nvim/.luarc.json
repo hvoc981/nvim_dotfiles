@@ -1,0 +1,11 @@
+{
+    "diagnostics.globals": [
+        "vim",
+        "imap",
+        "automatic_installation",
+        "rcaturn"
+    ],
+    "diagnostics.disable": [
+        "lowercase-global"
+    ]
+}

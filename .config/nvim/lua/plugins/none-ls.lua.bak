@@ -1,0 +1,24 @@
+return {
+	"nvimtools/none-ls.nvim",
+	dependencies = {
+		"nvimtools/none-ls-extras.nvim",
+	},
+	debug = true,
+	timeout_ms = 5000,
+	opts = function(_, opts)
+		local nls = require("null-ls")
+		opts.root_dir = opts.root_dir
+			or require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git")
+		opts.sources = vim.list_extend(opts.sources or {}, {
+			nls.builtins.formatting.stylua,
+			nls.builtins.formatting.google_java_format.with({
+				filetypes = { "java" },
+			}),
+			nls.builtins.formatting.clang_format,
+			require("none-ls.diagnostics.cpplint"),
+			require("none-ls.diagnostics.eslint"),
+		})
+		vim.lsp.buf.timeout_ms = 5000
+		vim.keymap.set("n", "<leader>n", vim.lsp.buf.format, {})
+	end,
+}
