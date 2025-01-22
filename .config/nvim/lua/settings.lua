@@ -110,6 +110,9 @@ nmap("<c-down>", "<c-w>-")
 nmap("<c-left>", "<c-w><")
 nmap("<c-right>", "<c-w>>")
 
+nmap("<leader>t", vim.cmd("echo 'test'"))
+vim.keymap.set("n", "<leader>t",vim.cmd([[tabprevious]]), {})
+
 -- Copy to paste to system clipboar
 -- nmap("y", '"+y')
 -- vmap("y", '"+y')

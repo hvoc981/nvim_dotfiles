@@ -60,10 +60,3 @@ bindings = [
 # Cursor
 [cursor]
 style = { shape = "Beam", blinking = "Always" }
-
-# [image]
-# opacity = 0.8
-# blur = 0.0
-# offset = { x = 0, y = 0 }
-# layer = "top"
-# backend = "ueberzugpp"
