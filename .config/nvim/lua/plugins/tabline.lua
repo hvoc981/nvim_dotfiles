@@ -7,7 +7,7 @@ return {
 			options = {
 				-- If lualine is installed tabline will use separators configured in lualine by default.
 				-- These options can be used to override those settings.
-				section_separators = { " ", "" },
+				-- section_separators = { " ", "" },
 
 				component_separators = { "", "" },
 				max_bufferline_percent = 66, -- set to nil by default, and it uses vim.o.columns * 2/3
